@@ -1,0 +1,17 @@
+Requirements and useful info:
+- you have 2 build 2 pages: the main onae and the overlay one containing the individual page presentation
+- both pages will work on the entire width of the viewport, vertical scrolling is totally ok
+- the products on the first page will be dynamically addes from the products.js file that you can find in the resource folder
+- clicking on one of the products/coats the overlay page will turn visible, part of the displayed data will need to be retrieved from the products object. 
+- the overlay page will be closed ONLY by clicking on the X icon
+Tip: consider passing an data-id from the main page to the overlay page in order to be able to get data from the main products object based on the relative unique id
+- all other functionality does not need to be implemented
+- imgURL will need to be "built", concatenation is in order
+
+- font suggestions: Seravek
+
+- colors:
+    - pink: #f8d9e0
+    - dark grey: #333333
+    - light grey: #e7e8e9
+    - text grey: #828282
