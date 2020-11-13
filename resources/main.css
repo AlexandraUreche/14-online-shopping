@@ -4,7 +4,6 @@
 
 html, body{
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -17,7 +16,7 @@ html, body{
    
 }
 header .titles{
-    height: 40%;
+    height: 350px;
     width: 100%;
     background-image: url(../assets/header.jpg);
     background-repeat: no-repeat;
@@ -26,35 +25,34 @@ header .titles{
     padding: 0px 50px;
     color: #ffffff;
 }
-.titles, .navigation-wrapper, .navigation-wrapper nav,
-.navigation-wrapper nav a,
-.image-details,
-.gallery-wrapper,
-.close-overlay{
+.titles, .menu-wrapper, .menu-wrapper nav,
+.menu-wrapper nav a, .gallery-wrapper .image-details, .gallery-wrapper,
+.close-overlay, .categoryTypes, .categoryTypes div, .btnSizes-wrapper,
+.details-image-wrapper,.composition-country{
     display: flex;
 }
-.titles, .navigation-wrapper,
-.navigation-wrapper nav a{
+.titles, .menu-wrapper, .menu-wrapper nav a,
+.categoryTypes div{
     align-items: center;
 }
-.titles,
-.navigation-wrapper nav,
-.image-details,
-.gallery-wrapper{
+.titles, .menu-wrapper nav, .image-details, .gallery-wrapper,
+.categoryTypes, .details-image-wrapper, .composition-country
+{
     justify-content: space-between;
 }
-.navigation-wrapper, .navigation-wrapper nav a{
+header .menu-wrapper, .menu-wrapper nav a,
+.categoryTypes div{
     justify-content: center;
 }
-.navigation-wrapper{
+header .menu-wrapper{
     height: 100px;
    
 }
 
 .piggy-wrapper-img{
     width: 200px;
-    height: 250px;
-    margin-right: 100px;
+    height: 300px;
+    margin-right: 150px;
 }
 .piggy-wrapper-img img{
     width: auto;
@@ -77,43 +75,51 @@ header .titles{
     font-weight: bold;
 }
 
-.navigation-wrapper nav{
+header .menu-wrapper nav{
     width: 50%;
 }
-.navigation-wrapper nav a:first-child,
-.shop-button button{
+.close-overlay-wrapper img, .menu-wrapper nav a, 
+.image-wrapper{
+    cursor: pointer;
+}
+.menu-wrapper nav a{
 
     border: none;
     border-radius: 20px;
     text-align: center;
-}
-
-.navigation-wrapper nav a:first-child{
-    background-color: #f8d9e0;
     width: 90px;
     height: 35px;
+    
+}
+
+.selected, .details-image-wrapper nav a:first-child{
+    background-color: #f8d9e0;
+    
 }
 main{
     padding: 0 50px;
 }
 
 .image-container{
-    width: 200px;
-    height: 320px;
+    width: 300px;
+    height: 500px;
 }
 .image-wrapper {
     width: 100%;
-    height: 300px;
+    height: 450px;
     background: url('../assets/coats/coat-1.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
+
 }
 
 .image-details{
     padding-top: 10px;
 }
-.image-details .price-wrapper{
+.price-wrapper, .btnSizes-wrapper button, .composition-wrapper div:last-child,
+.country-wrapper div:last-child, .careInstructions-wrapper p
+{
     color: #828282;
 }
 
@@ -131,7 +137,6 @@ main{
     left: 0;
     background: rgba(0, 0, 0, .6);
     padding: 30px;
-
 }
 
 #overlayContent{
@@ -141,29 +146,38 @@ main{
     align-items: center;
     justify-content: center;
 }
+
 .overlay-image-details{
-    width: 250px;
-    height: 650px;
+    width: 300px;
+    height: 750px;
     position: relative;
 }
+
 #imgBig{
    width: 100%;
    height: 200px;
    background-color: #fff;
    background-size: contain;
 }
+
 .details-image-wrapper{
     position: absolute;
+    flex-direction: column;
     bottom: 70px;
     width: 100%;
-    height: 400px;
+    height: 500px;
     border-radius: 20px;
     background-color: #fff;
+    padding: 20px;
+    font-size: 13px;
+    font-weight: 600;
 }
+
 .close-overlay{
     width: 100%;
    justify-content: flex-end;
 }
+
 .close-overlay-wrapper{
     width: 50px;
     height: 50px;
@@ -172,4 +186,72 @@ main{
 .close-overlay-wrapper img{
     width: 100%;
     height: 100%;
+}
+
+.categories-wrapper{
+    height: 250px;
+    width: 100%;
+}
+
+.categoryTypes div{
+    height: 80px;
+    width: 150px;
+    border: none;
+    border-radius: 20px;
+    background-color: #e7e8e9;
+}
+
+.categories-wrapper h2{
+    font-size: 20px;
+}
+.details-image-wrapper .price-wrapper{
+    font-size: 18px;
+}
+.secondary-title{
+    padding: 5px 0;
+}
+.btnSizes-wrapper button{
+    margin-right: 10px;
+    border: none;
+    width: 25px;
+    height: 25px;
+    background-color: unset;
+    box-shadow: 2px 2px 2px #999;
+    font-size: 10px;
+    font-weight: 600;
+}
+.details-image-wrapper .principal-title{
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.btnSizes-wrapper button:last-child{
+    margin-right: 0;
+}
+.details-image-wrapper nav{
+    width: 100%;
+}
+.details-image-wrapper nav a{
+    width: 75px;
+    height: 30px;
+}
+
+.details-image-wrapper nav a{
+    background-color: #e7e8e9;
+}
+.careInstructions-wrapper p{
+    margin: 0;
+}
+.addToCart-wrapper button{
+    width: 100%;
+    border: none;
+    background-color: black;
+    color: white;
+    height: 30px;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+.hidden{
+    display: none;
 }

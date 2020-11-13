@@ -35,7 +35,7 @@
                     <img alt="piggy image" src="assets/icon-piggy-bank.png">
                 </div>
             </div>
-            <div class="navigation-wrapper">
+            <div class="menu-wrapper">
                 <nav>
                     <a class="menu-item" data-content="coats-wrapper">Coats</a>
                     <a class="menu-item" data-content="dresses-wrapper">Dresses</a>
@@ -45,21 +45,9 @@
             </div>
         </header>
         <main>
-            <div id="overlay">
-                <div class="close-overlay">
-                    <div class="close-overlay-wrapper">
-                        <img alt="close icon" src="assets/close.png" />
-                    </div>
-                </div>
-                <div id="overlayContent">
-                    <div class="overlay-image-details">
-                    <div id="imgBig"></div>
-                    <div class="details-image-wrapper"></div>
-                </div>
-                </div>
-            </div>
-            <div class="gallery-wrapper">
-              <!-- <div class="image-container">
+            <div class="content coats-wrapper hidden">
+                <div class="gallery-wrapper">
+                    <!-- <div class="image-container">
                     <div class="image-wrapper" data-img="coat-1.jpg" data-id="1">
                     </div>
                     <div class="image-details">
@@ -68,9 +56,83 @@
                     </div>
                 </div>
                 -->
+                </div>
+                <div class="categories-wrapper">
+                    <div class="titleCateg">
+                        <h2>Categories</h2>
+                    </div>
+                    <div class="categoryTypes">
+                        <div class="categ-women">Women</div>
+                        <div class="categ-men">Men</div>
+                        <div class="categ-kids">Kids</div>
+                        <div class="categ-newCollection">New Collection</div>
+                    </div>
+                </div>
+                <div id="overlay">
+                    <div class="close-overlay">
+                        <div class="close-overlay-wrapper">
+                            <img alt="close icon" src="assets/close.png" />
+                        </div>
+                    </div>
+                    <div id="overlayContent">
+                        <div class="overlay-image-details">
+                            <div id="imgBig"></div>
+                            <div class="details-image-wrapper">
+                                <div class="image-details">
+                                    <div class="principal-title"> Blazer Coat</div>
+                                    <div class="price-wrapper">$105</div>
+                                </div>
+                                <div class="size-wrapper">
+                                    <div class="secondary-title">Your Size</div>
+                                    <div class="btnSizes-wrapper">
+                                        <button type="button">S</button>
+                                        <button type="button">M</button>
+                                        <button type="button">L</button>
+                                        <button type="button">XL</button>
+                                    </div>
+                                </div>
+                                <div class="secondary menu-wrapper">
+                                    <nav>
+                                        <a class="menu-item" data-content="details-wrapper">Details</a>
+                                        <a class="menu-item" data-content="order-wrapper">Order</a>
+                                        <a class="menu-item" data-content="payment-wrapper">Payment</a>
+                                    </nav>
+                                </div>
+                                <div class="composition-country">
+                                    <div class="composition-wrapper">
+                                        <div class="secondary-title">Composition</div>
+                                        <div class="composition">100% polyester</div>
+                                    </div>
+                                    <div class="country-wrapper">
+                                        <div class="secondary-title">Country</div>
+                                        <div class="country">Belgium</div>
+                                    </div>
+                                </div>
+                                <div class="careInstructions-wrapper">
+                                    <div class="secondary-title">Care</div>
+                                    <p>Follow the care label on your coat when
+                                        you cleaning and treat any stains promptly by blotting.</p>
+                                </div>
+                                <div class="addToCart-wrapper">
+                                    <button type="button">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="categories-wrapper">
-
+            <div class="content dresses-wrapper hidden">
+              <!--  <div class="gallery-wrapper">
+                </div> -->
+            </div>
+            <div class="content jersey-wrapper hidden">
+                <!--  <div class="gallery-wrapper">
+                </div> -->
+            </div>
+            <div class="content pants-wrapper hidden">
+                <!--  <div class="gallery-wrapper">
+                </div> -->
+            </div>
         </main>
     </div>
     <script src="resources/products.js"></script>
