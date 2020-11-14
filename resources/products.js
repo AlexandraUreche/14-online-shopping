@@ -5,7 +5,7 @@ let products = {
             name: "Top Coat",
             currency: "$",
             price: "105",
-            imgUrl: "coat-1.jpg",
+            imgUrl: "coats/coat-1.jpg",
             composition: "100% polyester",
             country: "Belgium",
             care: "A majority wool blend coats can't be washed safely at home in a machine and need to be taken to a specialized cleaner."
@@ -15,7 +15,7 @@ let products = {
             name: "Winter Coat",
             currency: "$",
             price: "90",
-            imgUrl: "coat-2.jpg",
+            imgUrl: "coats/coat-2.jpg",
             composition: "100% polyester",
             country: "Italy",
             care: "Soft and confortable fabric. Don't wash at high temperature and don't iron."
@@ -25,7 +25,7 @@ let products = {
             name: "Woolen Coat",
             currency: "$",
             price: "120",
-            imgUrl: "coat-3.jpg",
+            imgUrl: "coats/coat-3.jpg",
             composition: "100% polyester",
             country: "Germany",
             care: "Suitable for both classic and casual style. Consider cleaning to professional cleaners only."
@@ -35,7 +35,7 @@ let products = {
             name: "Blazer Coat",
             currency: "$",
             price: "60",
-            imgUrl: "coat-4.jpg",
+            imgUrl: "coats/coat-4.jpg",
             composition: "100% polyester",
             country: "Poland",
             care: "Follow the care label on your coat when you cleaning and treat any stains promptly by blotting."
@@ -49,7 +49,7 @@ let products = {
             name: "Cocktail Dress",
             currency: "$",
             price: "105",
-            imgUrl: "cocktail-dress.jpg",
+            imgUrl: "dresses/cocktail-dress.jpg",
             composition: "100% satin",
             country: "Belgium",
             care: "A majority wool blend coats can't be washed safely at home in a machine and need to be taken to a specialized cleaner."
@@ -59,7 +59,7 @@ let products = {
             name: "Office Dress",
             currency: "$",
             price: "190",
-            imgUrl: "office-dress.jpg",
+            imgUrl: "dresses/office-dress.jpg",
             composition: "100% cotton",
             country: "Italy",
             care: "Soft and confortable fabric. Don't wash at high temperature and don't iron."
@@ -69,7 +69,7 @@ let products = {
             name: "Princess Dress",
             currency: "$",
             price: "1200",
-            imgUrl: "princess-dress.jpg",
+            imgUrl: "dresses/princess-dress.jpg",
             composition: "100% satin",
             country: "Germany",
             care: "Suitable for both classic and casual style. Consider cleaning to professional cleaners only."
@@ -79,7 +79,7 @@ let products = {
             name: "Summer Dress",
             currency: "$",
             price: "100",
-            imgUrl: "summer-dress.jpg",
+            imgUrl: "dresses/summer-dress.jpg",
             composition: "100% cotton",
             country: "Poland",
             care: "Follow the care label on your coat when you cleaning and treat any stains promptly by blotting."
@@ -92,7 +92,7 @@ let products = {
             name: "Baseball Jersey",
             currency: "$",
             price: "105",
-            imgUrl: "baseball.jpg",
+            imgUrl: "jersey/baseball.jpg",
             composition: "100% polyester",
             country: "Belgium",
             care: "A majority wool blend coats can't be washed safely at home in a machine and need to be taken to a specialized cleaner."
@@ -102,7 +102,7 @@ let products = {
             name: "Cycling Jersey",
             currency: "$",
             price: "190",
-            imgUrl: "cycling.jpg",
+            imgUrl: "jersey/cycling.jpg",
             composition: "100% polyester",
             country: "Italy",
             care: "Soft and confortable fabric. Don't wash at high temperature and don't iron."
@@ -112,7 +112,7 @@ let products = {
             name: "Daily Jersey",
             currency: "$",
             price: "1200",
-            imgUrl: "loose-pants.jpg",
+            imgUrl: "jersey/daily.jpg",
             composition: "100% cotton",
             country: "Germany",
             care: "Suitable for both classic and casual style. Consider cleaning to professional cleaners only."
@@ -122,7 +122,7 @@ let products = {
             name: "Elegance Jersey",
             currency: "$",
             price: "100",
-            imgUrl: "formal-occassion-pants.jpg",
+            imgUrl: "jersey/elegance.jpg",
             composition: "100% satin",
             country: "Poland",
             care: "Follow the care label on your coat when you cleaning and treat any stains promptly by blotting."
@@ -135,7 +135,7 @@ let products = {
             name: "Harem Pants",
             currency: "$",
             price: "105",
-            imgUrl: "harem-pants.jpg",
+            imgUrl: "pants/harem-pants.jpg",
             composition: "100% satin",
             country: "Belgium",
             care: "A majority wool blend coats can't be washed safely at home in a machine and need to be taken to a specialized cleaner."
@@ -145,7 +145,7 @@ let products = {
             name: "Office Pants",
             currency: "$",
             price: "190",
-            imgUrl: "office-pants.jpg",
+            imgUrl: "pants/office-pants.jpg",
             composition: "100% cotton",
             country: "Italy",
             care: "Soft and confortable fabric. Don't wash at high temperature and don't iron."
@@ -155,7 +155,7 @@ let products = {
             name: "Loose Pants",
             currency: "$",
             price: "1200",
-            imgUrl: "loose-pants.jpg",
+            imgUrl: "pants/loose-pants.jpg",
             composition: "100% satin",
             country: "Germany",
             care: "Suitable for both classic and casual style. Consider cleaning to professional cleaners only."
@@ -165,7 +165,7 @@ let products = {
             name: "Occasion Pants",
             currency: "$",
             price: "100",
-            imgUrl: "formal-occassion-pants.jpg",
+            imgUrl: "pants/formal-occassion-pants.jpg",
             composition: "100% cotton",
             country: "Poland",
             care: "Follow the care label on your coat when you cleaning and treat any stains promptly by blotting."
