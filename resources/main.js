@@ -23,13 +23,18 @@ $(function () {
         if (!$(this).data('content')) {
             e.preventDefault();
         }
+        // ce nu folosesti, e ok sa stergi, e bine sa fie cat mai curat codul
         let viewPage = 0;
+
+        // este ok sa grupezi in functie de efectul dorit pe anumite sectiuni, mult mai curat si ursor de citit si urmarit
         menuItems.removeClass('selected');
+        $(this).addClass('selected');
+
         pagesWrapper.addClass('hidden');
         let pageClass = $(this).attr('data-content');
         $('.' + pageClass).removeClass('hidden');
         let galleryWrapperPage = $('.' + pageClass + ' .gallery-wrapper');
-        $(this).addClass('selected');
+        
         $('.categories-wrapper').removeClass('hidden');
         if ($(this).data('count')) {
             $(this).data('count', $(this).data('count') + 1);
@@ -53,6 +58,7 @@ $(function () {
         function overlayFunct($currentGallery) {
             $currentGallery.delegate('.image-wrapper', "click", function () {
                 let index = $(this).data('index');
+                // nu este good practice sa declari o variabila fara o valoare initiala
                 let prodIndex;
                 switch (currentProduct) {
                     case 'coats':
@@ -67,6 +73,7 @@ $(function () {
                     case 'pants':
                         prodIndex = products.pants[index];
                         break;
+                        // poti sa folosesti default-ul pentru coats, de exemplu, nu este good practice sa nu pui nimic aici
                     default:
                         break;
                 }
