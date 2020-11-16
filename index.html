@@ -37,7 +37,7 @@
             </div>
             <div class="menu-wrapper">
                 <nav>
-                    <a class="menu-item" data-product="coats" data-content="coats-wrapper">Coats</a>
+                    <a class="menu-item selected" data-product="coats" data-content="coats-wrapper">Coats</a>
                     <a class="menu-item" data-product="dresses" data-content="dresses-wrapper">Dresses</a>
                     <a class="menu-item" data-product="jersey" data-content="jersey-wrapper">Jersey</a>
                     <a class="menu-item" data-product="pants" data-content="pants-wrapper">Pants</a>
@@ -45,9 +45,8 @@
             </div>
         </header>
         <main>
-            <!-- atentie aici, una din ele vrei sa arati de defaul, initial cand intru pe proiect nu vad nimic pentru ca sunt toate ascunse si nu vrei asta -->
-            <!-- de asemenea si statusul de selected il vrei initial pe ceva, de dorit pe cel relativ sectiunii pe care o si arati -->
-            <div class="content coats-wrapper hidden">
+            
+            <div class="content products-wrapper">
                 <div class="gallery-wrapper">
                     <!-- <div class="image-container">
                     <div class="image-wrapper" data-img="coat-1.jpg" data-id="1">
@@ -60,20 +59,8 @@
                 -->
                 </div>
             </div>
-            <!-- aici nu era necesar sa faci wrapper pentru fiecare in parte. poti avea un singur wrapper si doar sa inlocuiesti continutul la click pe menu item-ul respectiv  -->
-            <div class="content dresses-wrapper hidden">
-                <div class="gallery-wrapper">
-                </div>
-            </div>
-            <div class="content jersey-wrapper hidden">
-                <div class="gallery-wrapper">
-                </div>
-            </div>
-            <div class="content pants-wrapper hidden">
-                <div class="gallery-wrapper">
-                </div>
-            </div>
-            <div class="categories-wrapper hidden">
+           
+            <div class="categories-wrapper">
                 <div class="titleCateg">
                     <h2>Categories</h2>
                 </div>
