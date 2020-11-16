@@ -51,7 +51,7 @@ $(function () {
                 prodIndex = products.pants[index];
                 break;
             default:
-                products.coats[index];
+                prodIndex =products.coats[index];
                 break;
         }
         $("#imgBig").css({ backgroundImage: "url(assets/" + $(this).data('img') + ")" })
