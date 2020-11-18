@@ -40,7 +40,7 @@ $(function () {
     $('.gallery-wrapper').delegate('.image-wrapper', "click", function () {
         let index = $(this).data('index');
         let prodIndex = products.coats[index];
-        switch ($('a').data('product')) {
+        switch ($('header nav .selected').data('product')) {
             case 'dresses':
                 prodIndex = products.dresses[index];
                 break;
