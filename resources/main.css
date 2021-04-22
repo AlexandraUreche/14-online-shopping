@@ -298,7 +298,7 @@ main{
     color: gray;
 }
 
-.product .product-price:before, .product .total-price:before, .totals-value:before {
+.product .price-wrapper:before, .product .total-price:before, .totals-value:before {
     content: '$';
 }
 

@@ -23,7 +23,8 @@ $(function () {
         </div>
         <div class="image-details"> 
             <div class="image_title">${buyedproductObj.name}</div>
-            <div class="price-wrapper">${buyedproductObj.currency} ${buyedproductObj.price}</div>
+            <div class="price-wrapper"> ${buyedproductObj.price}</div>
+        </div>
         </div>
              <div class="product-details">Size
              <div class="product-size">${prodSize}</div>
@@ -38,7 +39,7 @@ $(function () {
              <div class="total-price">${buyedproductObj.price}</div>
         </div>
     </div>
-    </div>
+    
         `;
     };
 
@@ -92,18 +93,14 @@ $(function () {
         buyedProduct = $(this).data('id');
         $('.totals').hide();
         $('.checkout-btn').hide();
-        $('.addToCart-wrapper button').click(function () {
-            var Csize = $(this).children($('.btnSizes-wrapper input')).val();
-            console.log(Csize);
+        $('.addToCart-wrapper button').click(function (e) {
+
             let prodSize = $('.btnSizes-wrapper input').val();
             productCarttHMTL = getShoppedProduct(prodSize, prodIndex);
             $('.shoopedProducts').append(productCarttHMTL);
             alert("This product was added in your shopping bag!");
             $('.totals').show();
             $('.checkout-btn').show();
-
-
-
         });
 
     });
@@ -111,35 +108,24 @@ $(function () {
     closeOverlay.click(function () {
         $("#overlay").hide();
     });
+
     const seeShippingBag = $('.shoppingBag');
     const seeshoppingBagWrapper = $('.shoppingBag-wrapper');
-
-
-    seeShippingBag.click(function () {
+    seeShippingBag.click(function (e) {
+        if ($(this).data('content')) {
+            e.preventDefault();
+        }
         menuItems.removeClass('selected');
         $(this).addClass('selected');
         $('.gallery-wrapper').empty();
         seeshoppingBagWrapper.removeClass('hidden');
 
-
     });
-
-
 
 
     let taxRate = 0.05;
     let shippingRate = 15.00;
-    const fadeTime = 300;
-
-
-    $('.product-quantity input').change(function () {
-        updateQuantity(this);
-    });
-
-    $('.product-removal button').click(function () {
-        removeItem(this);
-    });
-
+    const fadeTime = 100;
 
     function recalculateCart() {
         var subtotal = 0;
@@ -165,7 +151,6 @@ $(function () {
             $('.totals-value').fadeIn(fadeTime);
         });
     }
-
     function updateQuantity(quantityInput) {
         let price = parseFloat($('.product .price-wrapper').text());
         let quantity = $(quantityInput).val();
@@ -187,4 +172,13 @@ $(function () {
             recalculateCart();
         });
     }
+
+    $('.product .product-quantity input').change(function () {
+        updateQuantity(this);
+    });
+
+    $('.product .product-removal button').click(function () {
+        removeItem(this);
+    });
+
 });
