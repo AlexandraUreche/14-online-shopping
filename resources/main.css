@@ -27,20 +27,21 @@ header .titles{
 }
 .titles, .menu-wrapper, .menu-wrapper nav,
 .menu-wrapper nav a, .gallery-wrapper .image-details, .gallery-wrapper,
-.close-overlay, .categoryTypes, .categoryTypes div, .btnSizes-wrapper,
-.details-image-wrapper,.composition-country{
+.close-overlay, .categoryTypes, .categoryTypes div, .btnSizes-wrapper label,.btnSizes-wrapper,
+.details-image-wrapper,.composition-country, .product-quantity, .product,
+.product .image-details{
     display: flex;
 }
-.titles, .menu-wrapper, .menu-wrapper nav a,
+.titles, .menu-wrapper, .menu-wrapper nav a,.btnSizes-wrapper label,
 .categoryTypes div{
     align-items: center;
 }
 .titles, .menu-wrapper nav, .image-details, .gallery-wrapper,
-.categoryTypes, .details-image-wrapper, .composition-country
+.categoryTypes, .details-image-wrapper, .composition-country,.column-labels, .product
 {
     justify-content: space-between;
 }
-header .menu-wrapper, .menu-wrapper nav a,
+header .menu-wrapper, .menu-wrapper nav a, .btnSizes-wrapper label,
 .categoryTypes div{
     justify-content: center;
 }
@@ -100,7 +101,8 @@ main{
     padding: 0 50px;
 }
 
-.image-container{
+.products-wrapper .image-container, 
+.product .image-container{
     width: 300px;
     height: 500px;
 }
@@ -117,7 +119,7 @@ main{
 .image-details{
     padding-top: 10px;
 }
-.price-wrapper, .btnSizes-wrapper button, .composition-wrapper div:last-child,
+.price-wrapper, .btnSizes-wrapper label, .composition-wrapper div:last-child,
 .country-wrapper div:last-child, .careInstructions-wrapper p
 {
     color: #828282;
@@ -159,10 +161,12 @@ main{
    background-color: #fff;
    background-size: contain;
 }
+.product-quantity, .details-image-wrapper{
+    flex-direction: column;
 
+}
 .details-image-wrapper{
     position: absolute;
-    flex-direction: column;
     bottom: 70px;
     width: 100%;
     height: 500px;
@@ -210,7 +214,7 @@ main{
 .secondary-title{
     padding: 5px 0;
 }
-.btnSizes-wrapper button{
+.btnSizes-wrapper label{
     margin-right: 10px;
     border: none;
     width: 25px;
@@ -254,4 +258,56 @@ main{
 
 .hidden{
     display: none;
+}
+.btnSizes-wrapper input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  .btnSizes-wrapper input[type="radio"]:checked +label{
+    background-color:#f8d9e0;
+    border-color: #f8d9e0;
+}
+
+ 
+.product-removal{
+    margin-top: 20px;
+}
+
+.product-quantity input{
+    width: 40px;
+}
+
+.product .remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.totals .totals-item, .checkout-btn{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.totals .totals-item label{
+    padding-right: 15px;
+    font-weight: 400;
+    color: gray;
+}
+
+.product .product-price:before, .product .total-price:before, .totals-value:before {
+    content: '$';
+}
+
+.checkout {
+    border: 0;
+    margin-top: 20px;
+    padding: 6px 25px;
+    background-color: #f8d9e0;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 3px;
 }

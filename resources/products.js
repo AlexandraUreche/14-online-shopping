@@ -171,4 +171,5 @@ let products = {
             care: "Follow the care label on your coat when you cleaning and treat any stains promptly by blotting."
         }
     ]
+    
 }
