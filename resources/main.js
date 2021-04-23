@@ -26,7 +26,7 @@ $(function () {
             <div class="price-wrapper"> ${buyedproductObj.price}</div>
         </div>
         </div>
-             <div class="product-details">Size
+        <div class="product-details">Size
              <div class="product-size">${prodSize}</div>
         </div>
         <div class="product-quantity">Quantity
@@ -97,8 +97,9 @@ $(function () {
 
             let prodSize = $('.btnSizes-wrapper input').val();
             productCarttHMTL = getShoppedProduct(prodSize, prodIndex);
-            $('.shoopedProducts').append(productCarttHMTL);
+            $('.shoppedProducts').append(productCarttHMTL);
             alert("This product was added in your shopping bag!");
+            recalculateCart()
             $('.totals').show();
             $('.checkout-btn').show();
         });
@@ -128,7 +129,7 @@ $(function () {
     const fadeTime = 100;
 
     function recalculateCart() {
-        var subtotal = 0;
+        let subtotal = 0;
 
         $('.product').each(function () {
             subtotal += parseFloat($('.total-price').text());
@@ -158,7 +159,7 @@ $(function () {
 
         $('.product-line-price .total-price').each(function () {
             $(this).fadeOut(fadeTime, function () {
-                $(this).text(linePrice.toFixed(2));
+                $(this).html(linePrice.toFixed(2));
                 recalculateCart();
                 $(this).fadeIn(fadeTime);
             });
@@ -166,18 +167,22 @@ $(function () {
     }
 
     function removeItem(removeButton) {
-        var productRow = $(removeButton).parent().parent();
+        let productRow = $(removeButton).parent().parent();
         productRow.slideUp(fadeTime, function () {
             productRow.remove();
             recalculateCart();
         });
     }
 
-    $('.product .product-quantity input').change(function () {
+
+    $('.product-quantity input').change(function () {
+        console.log('quantity changed');
         updateQuantity(this);
     });
 
-    $('.product .product-removal button').click(function () {
+
+    $('.remove-product button').click(function () {
+        console.log('remove button clicked');
         removeItem(this);
     });
 
