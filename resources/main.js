@@ -6,6 +6,7 @@ $(function () {
     const countryProduct = $('.country');
     const careInstuctProduct = $('.careInstructions-wrapper p');
     const menuItems = $('header .menu-wrapper nav a:not(.shoppingBag)');
+    const shoppedProducts = $('.shoppedProducts');
     getproductHTML = function (index, productObj) {
         return `<div class="image-container">
         <div class="image-wrapper" data-index=${index} data-img=${productObj.imgUrl} data-id=${productObj.id} style="background-image: url(assets/${productObj.imgUrl})">
@@ -16,6 +17,7 @@ $(function () {
         </div>
         `;
     };
+    // eu nu as adauga dinamic toata pagina asta. pagina este statica, doar continutul efectiv e dinamic, deci poti sa ai pagina deja creata si apoi cu diferite selectii sa iti populezi continutul de care ai nevoie
     getShoppedProduct = function (prodSize, buyedproductObj) {
         return `<div class="product">
         <div class="image-container">
@@ -153,6 +155,7 @@ $(function () {
         });
     }
     function updateQuantity(quantityInput) {
+        // nu este good practice sa iti iei datele din text, iti sugerez sa iti salvezi intr-un data atribute, mult mai clean si safe
         let price = parseFloat($('.product .price-wrapper').text());
         let quantity = $(quantityInput).val();
         let linePrice = price * quantity;
@@ -174,8 +177,9 @@ $(function () {
         });
     }
 
-
-    $('.product-quantity input').change(function () {
+    // tie nu iti trigger-uia event-ul pentru ca adaugi elementul dinamic, de aceea ai nevoie de delegate
+    shoppedProducts.delegate('.product-quantity input', 'change', function() {
+    // $('.product-quantity input').change(function () {
         console.log('quantity changed');
         updateQuantity(this);
     });
