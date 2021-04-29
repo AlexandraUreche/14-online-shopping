@@ -17,52 +17,28 @@ $(function () {
         </div>
         `;
     };
-    // eu nu as adauga dinamic toata pagina asta. pagina este statica, doar continutul efectiv e dinamic, deci poti sa ai pagina deja creata si apoi cu diferite selectii sa iti populezi continutul de care ai nevoie
-    getShoppedProduct = function (prodSize, buyedproductObj) {
-        return `<div class="product">
-        <div class="image-container">
-        <div class="image-wrapper" data-img=${buyedproductObj.imgUrl} data-id=${buyedproductObj.id} style="background-image: url(assets/${buyedproductObj.imgUrl})">
-        </div>
-        <div class="image-details"> 
-            <div class="image_title">${buyedproductObj.name}</div>
-            <div class="price-wrapper"> ${buyedproductObj.price}</div>
-        </div>
-        </div>
-        <div class="product-details">Size
-             <div class="product-size">${prodSize}</div>
-        </div>
-        <div class="product-quantity">Quantity
-             <input type="number" value="1" min="1">
-        </div>
-       <div class="product-removal">
-            <button class="remove-product">Remove</button>
-        </div>
-        <div class="product-line-price">Total
-             <div class="total-price">${buyedproductObj.price}</div>
-        </div>
-    </div>
-    
-        `;
-    };
+   
 
 
     function addProduct(currentProduct) {
+        if (location.pathname.split('/').slice(-1)[0] =='index.html') {
         for (let i = 0; i < products[currentProduct].length; i++) {
             let productObj = products[currentProduct][i];
             productHMTL = getproductHTML(i, productObj);
             $('.gallery-wrapper').append(productHMTL);
-
+        }
         }
     }
-    addProduct(menuItems.data('product'));
 
+    addProduct(menuItems.data('product'));
+    
     menuItems.click(function (e) {
         if ($(this).data('product')) {
             e.preventDefault();
         }
         menuItems.removeClass('selected');
-        $('.shoppingBag').removeClass('selected');
-        $('.shoppingBag-wrapper').addClass("hidden");
+       // $('.shoppingBag').removeClass('selected');
+       // $('.shoppingBag-wrapper').addClass("hidden");
         $(this).addClass('selected');
         $('.gallery-wrapper').empty();
         addProduct($(this).data('product'));
@@ -91,17 +67,16 @@ $(function () {
         compositionProduct.text(prodIndex.composition);
         countryProduct.text(prodIndex.country);
         careInstuctProduct.text(prodIndex.care);
-        $("#overlay").show();
+         $("#overlay").show();
         buyedProduct = $(this).data('id');
         $('.totals').hide();
         $('.checkout-btn').hide();
-        $('.addToCart-wrapper button').click(function (e) {
+       $('.addToCart-wrapper button').click(function (e) {
 
             let prodSize = $('.btnSizes-wrapper input').val();
             productCarttHMTL = getShoppedProduct(prodSize, prodIndex);
             $('.shoppedProducts').append(productCarttHMTL);
             alert("This product was added in your shopping bag!");
-            recalculateCart()
             $('.totals').show();
             $('.checkout-btn').show();
         });
@@ -114,14 +89,10 @@ $(function () {
 
     const seeShippingBag = $('.shoppingBag');
     const seeshoppingBagWrapper = $('.shoppingBag-wrapper');
-    seeShippingBag.click(function (e) {
-        if ($(this).data('content')) {
-            e.preventDefault();
-        }
-        menuItems.removeClass('selected');
-        $(this).addClass('selected');
-        $('.gallery-wrapper').empty();
-        seeshoppingBagWrapper.removeClass('hidden');
+   seeShippingBag.click(function (e) {
+      
+        recalculateCart()
+
 
     });
 
@@ -134,7 +105,7 @@ $(function () {
         let subtotal = 0;
 
         $('.product').each(function () {
-            subtotal += parseFloat($('.total-price').text());
+            subtotal += parseFloat($('.total-price').html());
         });
 
         let tax = subtotal * taxRate;
@@ -155,8 +126,7 @@ $(function () {
         });
     }
     function updateQuantity(quantityInput) {
-        // nu este good practice sa iti iei datele din text, iti sugerez sa iti salvezi intr-un data atribute, mult mai clean si safe
-        let price = parseFloat($('.product .price-wrapper').text());
+        let price = parseFloat($('.product .image-wrapper').data("price"));
         let quantity = $(quantityInput).val();
         let linePrice = price * quantity;
 
@@ -177,15 +147,13 @@ $(function () {
         });
     }
 
-    // tie nu iti trigger-uia event-ul pentru ca adaugi elementul dinamic, de aceea ai nevoie de delegate
-    shoppedProducts.delegate('.product-quantity input', 'change', function() {
-    // $('.product-quantity input').change(function () {
+   $('.product-quantity input').change(function() {
         console.log('quantity changed');
         updateQuantity(this);
     });
 
 
-    $('.remove-product button').click(function () {
+    $('.product-removal button').click(function () {
         console.log('remove button clicked');
         removeItem(this);
     });
